@@ -1,8 +1,8 @@
 pipeline {
-    // agent any
-    agent {
-        docker {image 'node:19.6.0'}
-    }
+     agent any
+    //agent {
+    //    docker {image 'node:19.6.0'}
+    //}
  
     stages {
         stage('build code') {
