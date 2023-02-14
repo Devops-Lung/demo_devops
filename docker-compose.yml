@@ -2,7 +2,7 @@ version: '3'
 services:
   jenkins:
     restart: always
-    image: jenkins/jenkins:lts
+    image: jenkins/jenkins
     privileged: true
     user: root
     ports:
