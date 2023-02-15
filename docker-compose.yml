@@ -15,3 +15,12 @@ services:
       - ~/jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
+  agent:
+    image: jenkins/ssh-agent:jdk11
+    privileged: true
+    user: root
+    container_name: agent
+    expose:
+      - 22
+    environment:
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8yHF3a4YkxwiE7aBuHBw6miBhB1cgMWGR9envWAazU2CordgTYvzLFFL9qbb8dt23uRmaJ12KyPRrTr+S/UfC9t3TsO0sN2td2Q3MCn/sUre0eb85QlKW+pCofPdnVBy7AofmzF0fYPQfu37SYcuier/ErRaPbUEBVjG9KeJ50Sc6Rtgj+UFqHAV3FdO++OOJyKZUhdBgcKtSYYGi1A0l7WFG+Llp0NMsQ4QI7UqXLgb+VxeWzrdvsGTu2TSM/QsDEKEwsnwXu97+K9z6z1fnAUFdaRwIiY94Bl0gJXHOR87i8+7xSVpvewr3DWX9etHztqkN8pka6R4kMUDQlYXh/oiEOp1oqqW+fH0mkXmHDf+Ih0SluEMf8k5utBvkkQPpoQfJIyx7l4P1FoYThtKeNbZiT2r0deD3RQ+naxKmvYYRNljeGmJ2L5QFbSVW8T5cwohmCS1qPSSuGKHxX9bRlwVyhSLGgx97hri78xcyf2U0j7FHjffQHfXqdGz0LyM= holung@X
