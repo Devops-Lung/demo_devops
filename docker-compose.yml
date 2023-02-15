@@ -2,7 +2,7 @@ version: '3'
 services:
   jenkins:
     restart: always
-    image: jenkins/jenkins
+    image: jenkins
     privileged: true
     user: root
     ports:
@@ -15,13 +15,4 @@ services:
       - ~/jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
-  agent:
-    image: node
-    privileged: true
-    user: root
-    container_name: agent
-    expose:
-      - 22:2220
-      - 3000:30001
-    environment:
-      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCaJ9+AJcaP3v39YPPHE1+s5yh/W19arzQwz6bG20Nd2No/w5FgrDv+t+Q1jar7NXwuKyAKAumMmHpytbwZ1EB3Gxj8kGyCkfHIZk6bkyL11zHsn8+J7mmCRcQIRdFCOZXiXO0sbUYWLUAdFLB8c/TRgujGkcHbXd4GahaUuy0OCL9chh3UDMfR53pzYA8MxRW4sYw3geFUYa0PCjzroXV4CzGuhBWnhAaCjtOdsqyRagBsMQROyvF6LKwtHYxtanR7ijOkWcVHR4kymUaH65uMxd7Zr8gdzZFO9cAt9ZxF2dg7OqTMLYvY3TJ3CNvJpBvS4m/HiAxgNjfFDPbaPangMSYb7mAI3oVD/+yK83tYAA9zhC/emM7VHSH2n4hFJOfigWxzEC+n4dCAroRwT6uie4nAhPyYQgJ2y9273H2EguVEgencCkTwRWRYYgCOFnAEEWkb+in8/N3Mj4+sAHJZec0kfVwSJj5jVU+lhaoBdzWSrXq6u237tXkgJE2BNe0= holung@X
+  
