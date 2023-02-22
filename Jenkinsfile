@@ -1,11 +1,11 @@
 pipeline {
     // agent any
     agent {
-        docker {image 'node'}
+        docker {image 'node:16.19.0'}
     }
  
     stages {
-        stage('Build Code') {
+        stage('build code') {
             steps {
                 sh '''
                 npm install
