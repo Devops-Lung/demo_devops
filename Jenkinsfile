@@ -8,8 +8,8 @@ pipeline {
         stage('build code') {
             steps {
                 sh '''
-                npm install
-                npm run build
+                sudo npm install
+                sudo npm run build
                 '''
             }
         }
